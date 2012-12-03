@@ -1,5 +1,8 @@
 package tigit
 
+import auth.User
+import project.Project
+
 class Tigit implements Serializable {
 
     static int PENDING = 0, ACTIVE = 1, COMPLETE = 2
@@ -11,6 +14,11 @@ class Tigit implements Serializable {
     String description
     long points = 10
     int status = Tigit.PENDING
+
+    User author
+    User assignedTo
+
+    static belongsTo = [ project: Project ]
 
     static constraints = {
         title blank: false
