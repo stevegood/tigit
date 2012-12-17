@@ -4,6 +4,8 @@ class UserController {
 
     def register() {
         // register a new user account
+        def userInstance = new User(params)
+        [userInstance: userInstance]
     }
 
     def profile() {

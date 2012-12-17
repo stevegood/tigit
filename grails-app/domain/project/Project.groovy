@@ -35,7 +35,7 @@ class Project {
     }
 
     String nameToURI(){
-        def str = name.replaceAll(/[^a-z-A-Z0-9]/, '_').replaceAll(/(_)\1+/,'_').toLowerCase() // use some awesome regex to convert this to a uri
+        def str = name.replaceAll("'",'').replaceAll(/[^a-z-A-Z0-9]/, '_').replaceAll(/(_)\1+/,'_').toLowerCase() // use some awesome regex to convert this to a uri
         if (str[-1] == "_"){
             str = str.substring(0, str.length() - 1)
         }
