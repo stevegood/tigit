@@ -30,9 +30,20 @@
                     <span class="icon-bar"></span>
                 </a>
 
-                <a href="/" class="brand">Tigit</a>
+                <a href="/" class="brand" style="position: absolute; top: -15px;">
+                    <g:img dir="/images" file="logo_80x80.png" height="80px" width="80px" />
+                </a>
+
+                <a href="/" class="brand" style="margin-left: 70px;">
+                    Tigit
+                </a>
 
                 <div class="nav-collapse">
+
+                    <ul class="nav">
+                        <!-- TODO: navigation -->
+                    </ul>
+
                     <ul class="nav pull-right">
                         <sec:ifNotLoggedIn>
                             <li>
@@ -82,7 +93,6 @@
     </div>
 </div>
 
-<g:javascript library="application"/>
 <r:layoutResources/>
 
 </body>
