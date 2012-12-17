@@ -6,10 +6,6 @@
 
 <body>
 
-<g:if test='${flash.message}'>
-    <div class='alert alert-block alert-info'>${flash.message}</div>
-</g:if>
-
 <form action='${postUrl}' method='POST' class="form-signin" autocomplete='off'>
     <h2 class="form-signin-heading">Please sign in</h2>
     <input type="text" name='j_username' class="input-block-level" placeholder="${message( code: 'springSecurity.login.username.label' )}">

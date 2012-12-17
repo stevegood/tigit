@@ -24,13 +24,24 @@
     </div>
 
     <div class="span6">
+
         <form action="register" method="POST" class="form">
 
             <fieldset>
                 <legend>Tell us about yourself</legend>
 
+                <g:if test="${userInstance.hasErrors()}">
+                    <div class="alert alert-block alert-error">
+                        <ul>
+                            <g:eachError bean="${userInstance}" var="error">
+                                <li><g:message error="${error}"/></li>
+                            </g:eachError>
+                        </ul>
+                    </div>
+                </g:if>
+
                 <div class="row">
-                    <div class="span3 control-group">
+                    <div class="span3 control-group ${ hasErrors( bean: userInstance, field: 'firstName','error')}">
                         <label class="control-label" for="firstName">
                             <g:message code="user.first.name" default="First Name"/>:
                         </label>
@@ -39,7 +50,7 @@
                         </div>
                     </div>
 
-                    <div class="span3 control-group">
+                    <div class="span3 control-group ${ hasErrors( bean: userInstance, field: 'lastName','error')}">
                         <label class="control-label" for="lastName">
                             <g:message code="user.last.name" default="Last Name"/>:
                         </label>
@@ -50,7 +61,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="span3 control-group">
+                    <div class="span3 control-group ${ hasErrors( bean: userInstance, field: 'email','error')}">
                         <label class="control-label" for="email">
                             <g:message code="user.email" default="Email" />
                         </label>
@@ -59,7 +70,7 @@
                         </div>
                     </div>
 
-                    <div class="span3 control-group">
+                    <div class="span3 control-group ${ hasErrors( bean: userInstance, field: 'username','error')}">
                         <label class="control-label" for="username">
                             <g:message code="user.username" default="Username" />
                         </label>
@@ -70,7 +81,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="span3 control-group">
+                    <div class="span3 control-group ${ passwordsDontMatch ? 'error' : ''}">
                         <label class="control-label" for="password">
                             <g:message code="user.password" default="Password"/>:
                         </label>
@@ -79,7 +90,7 @@
                         </div>
                     </div>
 
-                    <div class="span3 control-group">
+                    <div class="span3 control-group ${ passwordsDontMatch ? 'error' : ''}">
                         <label class="control-label" for="password2">
                             <g:message code="user.password" default="Password"/> <g:message code="again.label" default="again" />:
                         </label>

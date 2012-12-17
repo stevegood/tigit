@@ -63,6 +63,7 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        auth.require.verification = false
     }
     production {
         grails.logging.jul.usebridge = false
@@ -100,3 +101,5 @@ grails.plugins.springsecurity.authority.className = 'tigit.Role'
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'auth.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'auth.UserRole'
 grails.plugins.springsecurity.authority.className = 'auth.Role'
+
+auth.require.verification = false

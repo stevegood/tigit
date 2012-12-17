@@ -61,6 +61,15 @@
 
     <div class="row">
         <div id="content" class="span12">
+
+            <g:if test='${flash.message}'>
+                <div class="row">
+                    <div class="span12">
+                        <div class='alert alert-block alert-${ flash.alertType ?: 'info' }'>${flash.message}</div>
+                    </div>
+                </div>
+            </g:if>
+
             <g:layoutBody/>
         </div>
     </div>

@@ -10,7 +10,7 @@ class BootStrap {
         Role adminRole = Role.findOrCreateWhere(authority: 'ROLE_ADMIN').save()
 
         if ( Environment.currentEnvironment == Environment.DEVELOPMENT ) {
-            User adminUser = new User( username: 'admin', password: 'password', enabled: true).save()
+            User adminUser = new User( firstName: 'Admin', lastName: 'User', email: 'admin@tigitapp.com', username: 'admin', password: 'password', enabled: true).save()
             UserRole.create( adminUser, userRole )
             UserRole.create( adminUser, adminRole )
         }
