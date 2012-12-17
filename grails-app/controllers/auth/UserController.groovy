@@ -22,6 +22,10 @@ class UserController {
                 // enable the account if verification is NOT required
                 userInstance.enabled = grailsApplication.config.auth?.require?.verification != true
 
+                if ( grailsApplication.config.auth?.require?.verification ) {
+                    // TODO: send a verification email or code or something
+                }
+
                 if ( !userInstance.save() ) {
                     render view: 'register', model: [ userInstance: userInstance ]
                     return

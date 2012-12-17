@@ -103,3 +103,8 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'auth.UserRole
 grails.plugins.springsecurity.authority.className = 'auth.Role'
 
 auth.require.verification = false
+
+grails.resources.mappers.yuicssminify.includes = ['**/*.css']
+grails.resources.mappers.yuijsminify.includes = ['**/*.js']
+grails.resources.mappers.yuicssminify.excludes = ['**/*.min.css']
+grails.resources.mappers.yuijsminify.excludes = ['**/*.min.js']

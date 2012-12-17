@@ -5,7 +5,7 @@ modules = {
 
     bootstrap {
         dependsOn 'jquery'
-        resource url: 'css/bootstrap.css'
+        resource url: 'less/bootstrap.less', attrs: [ rel: "stylesheet/less", type: 'css' ]
     }
 
     bootstrap_affix {
